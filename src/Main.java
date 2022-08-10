@@ -12,7 +12,6 @@ public class Main {
 
     public static void main(String[] args) {
         Map<Character, Integer> map = new HashMap<>();
-
         for (int i = 0; i < LOREMIPSUM.length(); i++) {
             char character = LOREMIPSUM.charAt(i);
             if (!map.containsKey(character)) {
@@ -25,12 +24,12 @@ public class Main {
 
         int max = Integer.MIN_VALUE;
         int min = Integer.MAX_VALUE;
-        for (Map.Entry<Character, Integer> kv : map.entrySet()) {
-            if (kv.getValue() > max) {
-                max = kv.getValue();
+        for (int value : map.values()) {
+            if (value > max) {
+                max = value;
             }
-            if (kv.getValue() < min) {
-                min = kv.getValue();
+            if (value < min) {
+                min = value;
             }
         }
         System.out.println(map);
